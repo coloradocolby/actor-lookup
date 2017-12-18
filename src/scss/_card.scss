@@ -1,0 +1,82 @@
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+
+// Larger than 15inch Mac
+$screen-xxl-min: 1441px;
+
+$tmdb-color: #01d277;
+
+.card {
+  background-color: rgba(0, 0, 0, 0.65);
+  border-radius: 10px;
+  margin: 50px 0 0;
+
+  .card-reveal, .card-content {
+  }
+  .card-block{
+    padding: 0;
+  }
+  .poster-img{
+    border-radius: 3px;
+    max-width: 350px;
+    max-height: 500px;
+    margin: 15px;
+  }
+  .font-tmdb{
+    color: $tmdb-color;
+  }
+  .personName{
+    font-size: 3.5em;
+  }
+  h1 {
+    margin: 0;
+  }
+
+  @media (min-width: $screen-xxl-min){
+    margin: 100px 0 0;
+
+  }
+  @media (min-width: $screen-sm-min){
+    .personName{
+      font-size: 5em;
+    }
+  }
+
+  .biography{
+    max-height: 200px;
+    overflow: auto;
+
+  }
+  table {
+    td, th{
+      border-top: 0px;
+      text-align: center;
+    }
+  }
+
+  ::-webkit-scrollbar
+  {
+    width: 12px;  /* for vertical scrollbars */
+    height: 12px; /* for horizontal scrollbars */
+  }
+
+  ::-webkit-scrollbar-track
+  {
+    background: #0F6537;
+  }
+
+  ::-webkit-scrollbar-thumb
+  {
+    background: $tmdb-color;
+  }
+
+}

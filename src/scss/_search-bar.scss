@@ -1,0 +1,35 @@
+$tmdb-color: #01d277;
+
+.rbt{
+  margin: 15px 0;
+  background: #222222;
+  border: 1px solid white;
+  border-radius: 3px;
+  min-width: 350px;
+}
+input{
+  color: white !important;
+}
+
+input::placeholder{
+  color: white !important;
+}
+.dropdown-item {
+  color: white;
+}
+.dropdown-item.active, .dropdown-item:active, .dropdown-item:hover {
+    background-color: $tmdb-color;
+}
+.dropdown-item.disabled{
+  color: white;
+}
+
+.dropdown-menu {
+  color: #ffffff;
+  background-color: #222222;
+  border: 1px solid #fff;
+}
+
+.form-control {
+  background-color: transparent; // fixes odd bootstrap form control styling once deployed
+}
