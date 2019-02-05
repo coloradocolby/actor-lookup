@@ -6,8 +6,6 @@ import '../scss/app.css';
 import Card from './card';
 import SearchBar from './search_bar';
 
-const TMDBLogo = "https://bit.ly/2zkROkL";
-
 // must start server if running locally (node server.js)
 const BASE_URL = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:8000';
 
@@ -85,7 +83,7 @@ class App extends Component {
           </div>
           <div className="d-flex justify-content-start">
             <a href="https://www.tmdb.org" target="_blank" rel="noopener noreferrer">
-              <img id="tmdb-logo" src={ TMDBLogo } alt="TMDB Logo"/>
+              <img id="tmdb-logo" src="/assets/tmdb-logo.svg" alt="TMDB Logo"/>
             </a>
           </div>
         </div>

@@ -1,24 +1,18 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 const ROOT_IMG_URL = "https://image.tmdb.org/t/p/original";
 
 class Card extends Component {
 
-  roundToWhole(num){
-    return Math.round(num);
-  }
-
-  getBirthday(date) {
-    let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    let current_date = new Date(date);
-    let month_value = current_date.getMonth();
-    let day_value = current_date.getDate() + 1;
-    let year_value = current_date.getFullYear();
-    return `${months[month_value]} ${day_value}, ${year_value}`;
-  }
-
   componentDidUpdate(){
     if(this.props.knownFor){
-      document.body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.85) 15%,rgba(0, 0, 0, 0.85) 15%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 1) 100%), url(${ROOT_IMG_URL}${this.props.knownFor[0].backdrop_path})`;
+      document.body.style.backgroundImage = `
+        linear-gradient(rgba(0, 0, 0, 0.85) 15%,
+        rgba(0, 0, 0, 0.85) 15%, 
+        rgba(0, 0, 0, 0.4) 40%, 
+        rgba(0, 0, 0, 1) 100%), 
+        url(https://image.tmdb.org/t/p/original${this.props.knownFor[0].backdrop_path})
+      `;
     }
   }
 
@@ -49,9 +43,9 @@ class Card extends Component {
                     </thead>
                     <tbody>
                       <tr>
-                        <td>{ this.getBirthday(this.props.birthday) }</td>
+                        <td>{ moment(this.props.birthday).format('MMMM DD, YYYY')}</td>
                         <td>{ this.props.placeOfBirth }</td>
-                        <td>{ this.roundToWhole(this.props.popularity) }</td>
+                        <td>{ Math.round(this.props.popularity) }</td>
                       </tr>
                     </tbody>
                   </table>

@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const axios = require('axios');
 const path = require('path');
+const morgan = require('morgan');
 
 require('dotenv').config()
 
@@ -13,6 +14,7 @@ const app = express();
 
 // Parsers for POST data
 app.use(bodyParser.json());
+app.use(morgan('dev'));
 
 // Add headers
 app.use(function (req, res, next) {
@@ -34,7 +36,7 @@ app.use(express.static(path.resolve(__dirname, 'build')));
 app.post('/api/people', (req, res) => {
   const query = req.body.query;
   axios.get(`https://api.tmdb.org/3/search/person?api_key=${TMDB_API_KEY}&language=en-US&query=${query}&page=1&include_adult=false`)
-    .then(resp => res.send(resp.data));
+    .then(resp => res.send(resp.data))
 });
 
 app.post('/api/person/id', (req, res) => {

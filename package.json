@@ -9,12 +9,16 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css": "yarn run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
-    "heroku-postbuild": "yarn run build"
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "axios": "^0.17.1",
+    "body-parser": "^1.18.3",
     "bootstrap": "4.0.0-alpha.6",
+    "express": "^4.16.4",
+    "moment": "^2.24.0",
+    "morgan": "^1.9.1",
     "node-sass-chokidar": "0.0.3",
     "react": "^16.0.0",
     "react-bootstrap-typeahead": "^2.0.0-alpha.3",
